@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5ed63c1-1b53-4c03-af98-a35e1ba17efe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ukol2Hotel.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hosti.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pokoje.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rezervace.java" afterDir="false" />
+    <list default="true" id="d5ed63c1-1b53-4c03-af98-a35e1ba17efe" name="Changes" comment="Vyplneni ukolu 2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,11 +70,24 @@
       <workItem from="1696787095714" duration="2150000" />
       <workItem from="1696876073079" duration="685000" />
       <workItem from="1697218410965" duration="7618000" />
-      <workItem from="1697375443027" duration="5612000" />
+      <workItem from="1697375443027" duration="6281000" />
     </task>
+    <task id="LOCAL-00001" summary="Vyplneni ukolu 2">
+      <option name="closed" value="true" />
+      <created>1697382412468</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697382412468</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Vyplneni ukolu 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vyplneni ukolu 2" />
   </component>
 </project>
