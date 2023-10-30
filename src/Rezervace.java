@@ -1,22 +1,38 @@
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Rezervace {
-    List<Hosti> listHostu;
-    Pokoje pokoj;
-    LocalDate datumOd;
-    LocalDate datumDo;
-    boolean pracovniDovolena;
+    private List<Host> listHostu;
 
-    public Rezervace(List<Hosti> listHostu,Pokoje pokoj, LocalDate datumOd, LocalDate datumDo, boolean pracovniDovolena) {
-        this.listHostu = listHostu;
+    private Host host;
+    private Pokoje pokoj;
+    private LocalDate datumOd;
+    private LocalDate datumDo;
+    private boolean pracovniDovolena;
+
+    public Rezervace(Pokoje pokoj, LocalDate datumOd, LocalDate datumDo, boolean pracovniDovolena,Host...hosti) {
+        this.listHostu = pridatHosta(hosti);
         this.pokoj =pokoj;
         this.datumOd = datumOd;
         this.datumDo = datumDo;
         this.pracovniDovolena = pracovniDovolena;
     }
 
-    public List<Hosti> getListHostu() {
+    public Rezervace(Host host , Pokoje pokoj, LocalDate datumOd, LocalDate datumDo, boolean pracovniDovolena) {
+        this.host = host;
+        this.pokoj =pokoj;
+        this.datumOd = datumOd;
+        this.datumDo = datumDo;
+        this.pracovniDovolena = pracovniDovolena;
+    }
+
+
+
+    public List<Host> getListHostu() {
         return listHostu;
     }
 
@@ -36,7 +52,7 @@ public class Rezervace {
         return pracovniDovolena;
     }
 
-    public void setListHostu(List<Hosti> listHostu) {
+    public void setListHostu(List<Host> listHostu) {
         this.listHostu = listHostu;
     }
 
@@ -56,13 +72,55 @@ public class Rezervace {
         this.pracovniDovolena = pracovniDovolena;
     }
 
+    public long getDelkaPobitu(){
+        return ChronoUnit.DAYS.between(getDatumOd(),getDatumDo());
+    }
+
+    public BigDecimal getCenaRezervace(){
+        return BigDecimal.valueOf(getDelkaPobitu()).multiply(getPokoj().getCenaZaNoc());
+    }
+
+    public String vypsatHosty(){
+        StringBuilder stringBuilder = new StringBuilder();
+        if(listHostu.isEmpty()){
+            listHostu = new ArrayList<>();
+            return host.toString();
+        } else {
+            for (Host host:listHostu) {
+                stringBuilder.append(host + ", ");
+
+            }
+        }
+        return stringBuilder.delete(stringBuilder.length()-2,stringBuilder.length()-1).toString();
+    }
+    public int vypsatPocetHostu(){
+        if(listHostu.isEmpty()){
+            return 1;
+        }
+        return listHostu.size();
+    }
+
+    public String maVyhledNaMoreAnoNe(){
+        return pokoj.isMaVyhledNaMore()?"ano":"ne";
+    }
+
+    public List<Host> pridatHosta(Host... novyHosti){
+        listHostu = new ArrayList<>();
+        for (Host host:novyHosti) {
+            listHostu.add(host);
+        }
+       return listHostu;
+    }
+
+
+//    SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+
     @Override
     public String toString() {
-        return "\nHosti: " + listHostu +
-                "\n" + pokoj.getCisloPokoje() +
-                "\nDatum od: " + datumOd +
-                "\nDatum do: " + datumDo +
-                "\nPracovni dovolena: " + pracovniDovolena ;
+        return  "\n"+datumOd +" až "+ datumDo+":" + vypsatHosty() + "["+vypsatPocetHostu()+", "+maVyhledNaMoreAnoNe()+"] za " + getCenaRezervace() + " Kč";
     }
+
+
+
 
 }
