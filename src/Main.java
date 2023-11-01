@@ -15,11 +15,18 @@ public class Main {
     public static MangementRezervaci mangementRezervaci = new MangementRezervaci();
     public static void zapsatRezervace(){
 
-
-        mangementRezervaci.zalozitRezervaci(pokoj3,LocalDate.of(2022,2,1),LocalDate.of(2022,2,4),true,karel,karel2,karolina);
-
         int denOd = 1;
         int denDo = 2;
+        mangementRezervaci.zalozitRezervaci(pokoj3,LocalDate.of(2022,2,1),LocalDate.of(2022,2,4),false,karel,karel2);
+        for (int i = 0; i < 10; i++) {
+            mangementRezervaci.zalozitRezervaci(pokoj3,LocalDate.of(2022,2,denOd),LocalDate.of(2022,2,denDo),true,karel,karel2,karolina);
+            denOd+=2;
+            denDo+=2;
+        }
+
+
+        denOd = 1;
+        denDo = 2;
         for (int i = 0; i < 8; i++) {
             mangementRezervaci.zalozitRezervaci(karolina,pokoj1,LocalDate.of(2023,8,denOd),LocalDate.of(2023,8,denDo),false);
             denOd+=2;
@@ -30,6 +37,22 @@ public class Main {
         mangementRezervaci.zalozitRezervaci(karel2,pokoj2,LocalDate.of(2023,7,18),LocalDate.of(2023,7,21),false);
         mangementRezervaci.zalozitRezervaci(karolina,pokoj3,LocalDate.of(2023,8,1),LocalDate.of(2023,8,31),false);
     }
+    public static void vypsatStatistikyHostu(){
+        int jedenHost=0;
+        int dvaHosti=0;
+        int viceNezDvaHosti=0;
+        for (Rezervace rezervace : mangementRezervaci.getListRezervaci()) {
+            if (rezervace.getListHostu()==null||rezervace.getListHostu().isEmpty()){
+                jedenHost++;
+            } else if (rezervace.getListHostu().size()==2) {
+                dvaHosti++;
+            }else{
+                viceNezDvaHosti++;
+            }
+
+        }
+        System.out.println("\nPočet rezervací s jedním hostem: "+jedenHost+"\nPočet rezervací se dvěma hosty: "+dvaHosti+"\nPočet rezervací s více něž dvěma hosty: "+viceNezDvaHosti);
+    }
     public static void vypsatRezervace(){
         System.out.println(mangementRezervaci.getListRezervaci());
     }
@@ -39,6 +62,13 @@ public class Main {
         vypsatRezervace();
         System.out.println("Počet služebních rezervací: " + mangementRezervaci.getPocetPracovnichRezervaci());
         System.out.println("Počet hostů: "+ mangementRezervaci.getPocetHostu());
-        System.out.println("Průměrný počet hostů na pokoj:" +mangementRezervaci.getPrumernyPocetHostu());
+        System.out.println("Průměrný počet hostů na pokoj: " +mangementRezervaci.getPrumernyPocetHostu());
+
+        System.out.println("Vypsání prvních 8 rekreačních rezervací:"+mangementRezervaci.vypsatRekreacniRezervace(8));
+        vypsatStatistikyHostu();
+        System.out.println("Vymazání rezervací: ");
+        mangementRezervaci.vymazaRezervace();
+        System.out.println("Výpis po vymazání");
+        vypsatRezervace();
     }
 }

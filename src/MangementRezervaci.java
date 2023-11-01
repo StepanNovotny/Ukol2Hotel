@@ -42,6 +42,7 @@ public class MangementRezervaci {
     }
 
     public int getPrumernyPocetHostu(){
+
         return getPocetHostu()/listRezervaci.size();
     }
 
@@ -55,6 +56,21 @@ public class MangementRezervaci {
             }
         }
         return pocetHostu;
+    }
+
+    public List<Rezervace> vypsatRekreacniRezervace(int pocetRezervaci){
+        List<Rezervace> rekreacniRezervaceList = new ArrayList<>();
+        int pocetRekreacnichRezervaci =0;
+        for (Rezervace rezervace:listRezervaci) {
+            if(!rezervace.isPracovniDovolena()){
+                rekreacniRezervaceList.add(rezervace);
+                pocetRekreacnichRezervaci++;
+            }
+            if(pocetRekreacnichRezervaci==pocetRezervaci){
+                break;
+            }
+        }
+        return rekreacniRezervaceList;
     }
 
 

@@ -82,7 +82,7 @@ public class Rezervace {
 
     public String vypsatHosty(){
         StringBuilder stringBuilder = new StringBuilder();
-        if(listHostu.isEmpty()){
+        if(listHostu==null||listHostu.isEmpty()){
             listHostu = new ArrayList<>();
             return host.toString();
         } else {

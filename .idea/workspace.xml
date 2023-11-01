@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5ed63c1-1b53-4c03-af98-a35e1ba17efe" name="Changes" comment="Vyplneni ukolu 2">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MangementRezervaci.java" afterDir="false" />
+    <list default="true" id="d5ed63c1-1b53-4c03-af98-a35e1ba17efe" name="Changes" comment="Vyplneni ukolu 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hosti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Host.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pokoje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pokoje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rezervace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rezervace.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697385059443</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Vyplneni ukolu 3">
+      <created>1698707764644</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698707764644</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +134,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Vyplneni ukolu 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vyplneni ukolu 2" />
+    <MESSAGE value="Vyplneni ukolu 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vyplneni ukolu 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
